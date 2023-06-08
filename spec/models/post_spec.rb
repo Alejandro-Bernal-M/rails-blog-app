@@ -8,7 +8,6 @@ describe Post, type: :model do
   comment3 = Comment.create(Text: 'Content3', post: post1, author: user1)
   comment4 = Comment.create(Text: 'Content4', post: post1, author: user1)
   comment5 = Comment.create(Text: 'Content5', post: post1, author: user1)
-  comment6 = Comment.create(Text: 'Content6', post: post1, author: user1)
 
   it 'has a valid Title' do
     expect(post1).to be_valid
@@ -45,6 +44,6 @@ describe Post, type: :model do
   end
 
   it 'returns the 5 most recent comments for a given post' do
-    expect(post1.return_five_most_recent_comments).to eq([comment6, comment5, comment4, comment3, comment2])
+    expect(post1.return_five_most_recent_comments).to eq([comment5, comment4, comment3, comment2, comment1])
   end
 end

@@ -38,6 +38,7 @@ The Rails-blog-app will be a classic example of a blog website. It will be a fun
 
 - **Ruby on Rails**
 - **Functional website**
+- **Unit testing**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -72,8 +73,8 @@ bundle install
 
 ## Future Features <a name="key-features"></a>
 
-[] Add functionality.
-[] Preserve data.
+[ ] Add functionality.
+[ ] Preserve data.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

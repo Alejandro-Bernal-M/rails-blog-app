@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 describe Post, type: :model do
-  user1 = User.create(Name: "John Doe", PostCounter: 0)
-  post1 = Post.create(Title: "Title1", CommentsCounter: 0, LikesCounter: 0, author: user1)
-  comment1 = Comment.create(Text: "Content1", post: post1, author: user1)
-  comment2 = Comment.create(Text: "Content2", post: post1, author: user1)
-  comment3 = Comment.create(Text: "Content3", post: post1, author: user1)
-  comment4 = Comment.create(Text: "Content4", post: post1, author: user1)
-  comment5 = Comment.create(Text: "Content5", post: post1, author: user1)
-  comment6 = Comment.create(Text: "Content6", post: post1, author: user1)
+  user1 = User.create(Name: 'John Doe', PostCounter: 0)
+  post1 = Post.create(Title: 'Title1', CommentsCounter: 0, LikesCounter: 0, author: user1)
+  comment1 = Comment.create(Text: 'Content1', post: post1, author: user1)
+  comment2 = Comment.create(Text: 'Content2', post: post1, author: user1)
+  comment3 = Comment.create(Text: 'Content3', post: post1, author: user1)
+  comment4 = Comment.create(Text: 'Content4', post: post1, author: user1)
+  comment5 = Comment.create(Text: 'Content5', post: post1, author: user1)
+  comment6 = Comment.create(Text: 'Content6', post: post1, author: user1)
 
   it 'has a valid Title' do
     expect(post1).to be_valid
@@ -17,7 +17,7 @@ describe Post, type: :model do
   it 'has an invalid Title' do
     post1.Title = nil
     expect(post1).to_not be_valid
-    post1.Title = "Title1" 
+    post1.Title = 'Title1'
   end
 
   it 'has a valid CommentsCounter' do

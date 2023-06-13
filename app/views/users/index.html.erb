@@ -1,1 +1,17 @@
-<h1>List of all users</h1>
+<h1 class ="usersTitle">List of all users</h1>
+<div class= "allUsers">
+  <% @users.each do |user| %>
+  <div class= "container">
+  <div class= "photo">
+    <%= image_tag user.Photo , class: "img-profile" %>
+  </div>
+  <div class="nameAndPosts">
+    <p class = "name">
+      <%= link_to user.Name, user_path(user) %>
+    </p>
+    <p class = "numberOfPosts" >
+      Number of posts: <%= user.PostCounter > 0 ? user.PostCounter : 0 %>
+  </div>
+  </div>
+  <% end %> 
+</div>

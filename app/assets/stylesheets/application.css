@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.usersTitle {
+  text-align: center;
+  margin: 20px 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 3rem;
+}
+
+.allUsers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  width: 95%;
+  height: 100px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.photo {
+  width: 20%;
+  max-width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.img-profile {
+  width: 100%;
+  height: 100%;
+}
+
+.nameAndPosts {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 20px;
+  border: 1px solid black;
+}
+
+.name {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2rem;
+}
+
+.numberOfPosts {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  align-self: flex-end;
+  font-size: 1rem;
+}

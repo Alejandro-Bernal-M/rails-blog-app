@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :request do
-  describe "GET /index" do
+RSpec.describe 'Posts', type: :request do
+  describe 'GET /index' do
     it 'Returns a sucesfull response' do
       get user_posts_url(1, 1)
       expect(response).to be_successful
@@ -19,7 +19,7 @@ RSpec.describe "Posts", type: :request do
     end
   end
 
-  describe "GET /show" do
+  describe 'GET /show' do
     it 'Returns a sucesfull response' do
       get user_post_url(1, 1)
       expect(response).to be_successful

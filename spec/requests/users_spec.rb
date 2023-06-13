@@ -33,7 +33,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'Include correct placeholder text in response body' do
       get user_url(1)
-      expect(response.body).to include('show the user id details')
+      expect(response.body).to include('users details')
     end
   end
 end

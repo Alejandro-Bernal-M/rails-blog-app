@@ -1,1 +1,44 @@
-<h1> show the user id details</h1>
+<h1 class ="usersTitle"> users details</h1>
+<div class= "userProfile">
+  <div class= "container">
+    <div class= "photo">
+      <%= image_tag @user.Photo , class: "img-profile" %>
+    </div>
+    <div class="nameAndPosts">
+      <p class = "name">
+        <%= @user.Name %>
+      </p>
+      <p class = "numberOfPosts" >
+        Number of posts: <%= @user.PostCounter %>
+      </p>
+    </div>
+  </div>
+  <div class = "bioContainer" >
+    <h2> Bio </h2>
+    <p class = "bio">
+      <%= @user.Bio %>
+    </p>
+  </div>
+  <% @recent_posts.each_with_index do |post, index| %>
+  <div class = "post">
+    <p>
+      Post #<%= index + 1 %>
+    </p>
+    <p class = "postTitle">
+      <%= post.Title %>
+    </p>
+    <p class = "postContent">
+      <%= post.Text %>
+    </p>
+    <div class = "counters">
+      <span> 
+        Comments: <%= post.CommentsCounter == nil ?  0 : post.CommentsCounter  %>
+      </span>
+      <span> 
+        Likes: <%= post.LikesCounter == nil ? 0 : post.LikesCounter  %>
+      </span>
+    </div>
+  </div>
+  <% end %>
+  <%= button_to 'See all posts', user_posts_path(@user.id), method: :get, class: 'btnPosts' %>
+</div>

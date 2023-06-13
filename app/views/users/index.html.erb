@@ -10,7 +10,8 @@
       <%= link_to user.Name, user_path(user) %>
     </p>
     <p class = "numberOfPosts" >
-      Number of posts: <%= user.PostCounter > 0 ? user.PostCounter : 0 %>
+      Number of posts: <%= user.PostCounter %>
+    </p>
   </div>
   </div>
   <% end %> 

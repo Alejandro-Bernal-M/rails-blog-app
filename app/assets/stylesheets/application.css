@@ -98,7 +98,8 @@
 }
 
 .post,
-.postComments {
+.postComments,
+.postInformation {
   width: 89%;
   height: auto;
   min-height: 100px;
@@ -133,4 +134,12 @@
   align-items: center;
   width: 100%;
   gap: 2px;
+}
+
+.postDetails {
+  gap: 2px;
+}
+
+.btnMargin {
+  margin-top: 20px;
 }

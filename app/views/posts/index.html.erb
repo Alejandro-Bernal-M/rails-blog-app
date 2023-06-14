@@ -27,6 +27,7 @@
             <span> 
               Comments: <%= post.CommentsCounter == nil ?  0 : post.CommentsCounter  %>
             </span>
+            ,
             <span> 
               Likes: <%= post.LikesCounter == nil ? 0 : post.LikesCounter  %>
             </span>
@@ -34,7 +35,7 @@
         </div>
         <div class= "postComments">
         <% if Comment.all.where(post_id: post.id).any? %>
-          <%Comment.all.where(post_id: post.id).each do |comment| %>
+          <% post.return_five_most_recent_comments.each do |comment| %>
             <p>
               <%= User.find(comment.author_id).Name %>
               :

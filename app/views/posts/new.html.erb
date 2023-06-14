@@ -1,1 +1,16 @@
 <h1 class ="usersTitle"> New post </h1>
+<%= form_with model: Post, url: user_posts_path, class: 'form', method: :post do |form| %>
+  <div class= "formDiv">
+    <%= form.label :Title %>
+    <%= form.text_field :Title %>
+  </div>
+
+  <div class= "formDiv">
+    <%= form.label :Text %>
+    <%= form.text_area :Text %>
+  </div>
+
+  <div class = "formDiv">
+    <%= form.submit 'Create Post', class: 'btnPosts' %>
+  </div>
+<% end %>

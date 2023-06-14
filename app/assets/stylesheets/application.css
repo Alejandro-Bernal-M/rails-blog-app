@@ -150,3 +150,39 @@
   font-size: 20px;
   margin-bottom: 15px;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.formDiv {
+  width: 60%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.formDiv > label {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+}
+
+.formDiv > input,
+.formDiv > textarea {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  padding: 0 10px;
+  border-radius: 6px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.formDiv > input {
+  height: 30px;
+}

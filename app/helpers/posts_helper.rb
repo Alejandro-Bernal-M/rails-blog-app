@@ -1,5 +1,5 @@
 module PostsHelper
-  def is_user? (user)
+  def user?(user)
     @current_user == user
   end
 end

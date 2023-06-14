@@ -4,7 +4,7 @@
     </div>
     <div class="nameAndPosts">
       <p class = "name">
-        <%= is_user?(user) ? 'You' : user.Name %>
+        <%= user?(user) ? 'You' : user.Name %>
       </p>
       <p class = "numberOfPosts" >
         Number of posts: <%= user.PostCounter %>

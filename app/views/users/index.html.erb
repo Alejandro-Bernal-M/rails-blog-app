@@ -1,1 +1,6 @@
-<h1>List of all users</h1>
+<h1 class ="usersTitle">List of all users</h1>
+<div class= "allUsers">
+  <% @users.each do |user| %>
+    <%= link_to render(partial: 'shared/user_info', locals: { user: user }), user_path(user), class: "container" %>
+  <% end %>
+</div>

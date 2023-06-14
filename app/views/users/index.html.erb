@@ -1,18 +1,6 @@
 <h1 class ="usersTitle">List of all users</h1>
 <div class= "allUsers">
   <% @users.each do |user| %>
-  <div class= "container">
-  <div class= "photo">
-    <%= image_tag user.Photo , class: "img-profile" %>
-  </div>
-  <div class="nameAndPosts">
-    <p class = "name">
-      <%= link_to user.Name, user_path(user) %>
-    </p>
-    <p class = "numberOfPosts" >
-      Number of posts: <%= user.PostCounter %>
-    </p>
-  </div>
-  </div>
-  <% end %> 
+    <%= link_to render(partial: 'shared/user_info', locals: { user: user }), user_path(user), class: "container" %>
+  <% end %>
 </div>

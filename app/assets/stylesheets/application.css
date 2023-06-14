@@ -27,7 +27,8 @@
   font-size: 3rem;
 }
 
-.allUsers {
+.allUsers,
+.postsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,7 +82,8 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  gap: 20px;
+  gap: 25px;
+  margin-bottom: 20px;
 }
 
 .bioContainer {
@@ -95,7 +97,8 @@
   gap: 15px;
 }
 
-.post {
+.post,
+.postComments {
   width: 89%;
   height: auto;
   min-height: 100px;
@@ -111,7 +114,7 @@
 }
 
 .btnPosts {
-  width: 100px;
+  width: auto;
   height: 30px;
   background-color: #fff;
   border: 1px solid black;
@@ -121,4 +124,13 @@
   font-size: 1rem;
   margin-bottom: 30px;
   cursor: pointer;
+  padding: 2px 5px;
+}
+
+.potsAndComments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2px;
 }

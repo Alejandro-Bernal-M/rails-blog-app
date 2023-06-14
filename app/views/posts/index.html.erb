@@ -1,1 +1,54 @@
-<h1> All the post of the user </h1>
+<h1 class ="usersTitle" > All the post of the user </h1>
+<div class= "userProfile">
+  <div class= "container">
+      <div class= "photo">
+        <%= image_tag @user.Photo , class: "img-profile" %>
+      </div>
+      <div class="nameAndPosts">
+        <p class = "name">
+          <%= @user.Name %>
+        </p>
+        <p class = "numberOfPosts" >
+          Number of posts: <%= @user.PostCounter %>
+        </p>
+      </div>
+    </div>
+    <div class = "postsContainer">
+    <% @posts.each do |post|%>
+      <div class = "potsAndComments">
+        <div class= "post">
+          <h2>
+            <%= link_to post.Title, user_post_path(@user.id, post.id)  %>
+          </h2>
+          <p>
+          <%= post.Text.length > 100 ? post.Text[0..100].concat('...') : post.Text  %>
+          </p>
+          <div class = "counters">
+            <span> 
+              Comments: <%= post.CommentsCounter == nil ?  0 : post.CommentsCounter  %>
+            </span>
+            <span> 
+              Likes: <%= post.LikesCounter == nil ? 0 : post.LikesCounter  %>
+            </span>
+          </div>
+        </div>
+        <div class= "postComments">
+        <% if Comment.all.where(post_id: post.id).any? %>
+          <%Comment.all.where(post_id: post.id).each do |comment| %>
+            <p>
+              <%= User.find(comment.author_id).Name %>
+              :
+              <%= comment.Text %>
+            </p>
+          <% end %>
+          <% else %>
+            <p>
+              No comments yet
+            </p>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+    <%= button_to 'Back to all the users', root_path, method: :get, class: 'btnPosts'%>
+</div>

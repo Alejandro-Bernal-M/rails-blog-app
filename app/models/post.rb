@@ -5,6 +5,7 @@ class Post < ApplicationRecord
 
   # Validations
   validates :Title, presence: true, length: { minimum: 3, maximum: 250 }
+  validates :Text, presence: true, length: { minimum: 1, maximum: 3000 }
   validates :CommentsCounter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :LikesCounter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 

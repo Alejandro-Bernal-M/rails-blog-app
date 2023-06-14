@@ -143,3 +143,10 @@
 .btnMargin {
   margin-top: 20px;
 }
+
+.loginAs {
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  margin-bottom: 15px;
+}

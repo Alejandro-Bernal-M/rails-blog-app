@@ -1,7 +1,5 @@
 <h1 class ="usersTitle">List of all users</h1>
-<p>
-  You are logged in as: <%= @current_user.Name %>
-</p>
+<%= render 'shared/login_as' %>
 <div class= "allUsers">
   <% @users.each do |user| %>
     <%= link_to render(partial: 'shared/user_info', locals: { user: user }), user_path(user), class: "container" %>

@@ -47,17 +47,57 @@ The Rails-blog-app will be a classic example of a blog website. It will be a fun
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
+> You need the following tools be installed in your computer:
+>
+> - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
+> - [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
+> - [Rails](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm)
 
-In order to run this project you need: Ruby installed on your computer
 
 ### Setup
+1. Download the `Zip` file or **Clone the repo with**:
 
-Clone this repo by copying https://github.com/Alejandro-Bernal-M/rails-blog-app.git
-and run it .
+```bash
+git clone https://github.com/Alejandro-Bernal-M/rails-blog-app.git
+```
 
+2. To access the project directory
+
+```bash
+cd rails-blog-app
+```
 ### Install
 
+```bash
 bundle install
+rails db:migrate
+```
+
+### Run the seeder
+
+```
+rails db:seed
+```
+
+### Run the App
+
+```bash
+rails s
+```
+
+```
+Check http://localhost:3000/ in your browser
+```
+### Run Test
+
+- To run models tests
+```bash
+rspec spec/models
+```
+- To run views tests
+```bash
+bundle exec rspec spec/views
+```
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

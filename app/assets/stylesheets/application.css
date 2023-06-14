@@ -186,3 +186,7 @@
 .formDiv > input {
   height: 30px;
 }
+
+.btnComment {
+  margin: 10px;
+}

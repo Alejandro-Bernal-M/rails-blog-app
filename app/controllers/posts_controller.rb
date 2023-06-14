@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = Post.new()
     @post.Title = params[:post][:Title]
     @post.Text = params[:post][:Text]
-    @post.author = @user
+    @post.author = @current_user
     @post.CommentsCounter = 0
     @post.LikesCounter = 0
     if @post.save

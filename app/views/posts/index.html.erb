@@ -40,5 +40,8 @@
       </div>
     <% end %>
     </div>
+    <% if is_user?(@user)%>
+      <%= button_to 'New post', new_user_post_path, method: :get, class: 'btnPosts'%>
+    <% end %>
     <%= button_to 'Back to all the users', root_path, method: :get, class: 'btnPosts'%>
 </div>

@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   post '/users/:user_id/posts/:post_id', to: 'comments#create', as: 'create_comment'
   
   post '/users/:user_id/posts/:post_id/likes', to: 'likes#create', as: 'create_like'
-  get '/users/*path', to: 'users#invalid_user', constraints: { path: /[^\/]+/ }
+  get '/users/*path', to: 'users#invalid_user', constraints: { path: /[^\/]+/ }, as: 'invalid_user'
 end

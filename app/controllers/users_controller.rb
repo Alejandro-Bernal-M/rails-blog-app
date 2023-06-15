@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    @recent_posts = @user.return_three_most_recent_posts
+    if @user.nil?
+      render :invalid_user
+    else
+      @recent_posts = @user.return_three_most_recent_posts
+    end
   end
 
   def invalid_user

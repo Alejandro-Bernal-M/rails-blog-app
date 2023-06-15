@@ -33,6 +33,6 @@ class PostsController < ApplicationController
   def show
     @user = User.find_by_id(params[:user_id])
     @post = Post.find_by_id(params[:id])
-    redirect_to '/users/invalid_user' if @post.nil? || @user.nil? 
+    redirect_to '/users/invalid_user' if @post.nil? || @user.nil?
   end
 end

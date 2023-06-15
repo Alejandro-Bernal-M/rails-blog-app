@@ -1,4 +1,5 @@
 <h1 class ="usersTitle"> All the details of a post from specified user </h1>
+<%= render 'shared/login_as' %>
 <div class = "userProfile postDetails" >
   <div class = "postInformation">
     <h2> <%= @post.Title %> by <%= @user.Name %> </h2>
@@ -30,5 +31,7 @@
         </p>
     <% end %>
   </div>
+  <%= button_to 'Create a comment', new_comment_path(user_id: @user.id, post_id: @post.id), method: :get, class: 'btnPosts btnComment'  %>
+  <%= button_to 'Give like', create_like_path(user_id: @user.id, post_id: @post.id), method: :post, class: 'btnPosts btnComment' %>
   <%= button_to 'Back to all the posts', user_posts_path, method: :get, class: 'btnPosts btnMargin'%>
 </div>

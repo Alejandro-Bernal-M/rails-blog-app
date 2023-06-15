@@ -1,0 +1,12 @@
+<h1 class ="usersTitle"> New Comment </h1>
+<%= form_with model: Comment, url: create_comment_path, class: 'form', method: :post do |form| %>
+  <h2>You are creating a comment for &apos;<%= @post.Title %>&apos; </h2>
+  <div class= "formDiv">
+    <%= form.label :Text %>
+    <%= form.text_area :Text %>
+  </div>
+
+  <div class = "formDiv">
+    <%= form.submit 'Create Comment', class: 'btnPosts' %>
+  </div>
+<% end %>

@@ -1,4 +1,5 @@
 <h1 class ="usersTitle" > All the post of the user </h1>
+<%= render 'shared/login_as' %>
 <div class= "userProfile">
   <%= render partial: "shared/user_info", locals: { user: @user } %>
     <div class = "postsContainer">
@@ -39,5 +40,8 @@
       </div>
     <% end %>
     </div>
+    <% if user?(@user)%>
+      <%= button_to 'New post', new_user_post_path, method: :get, class: 'btnPosts'%>
+    <% end %>
     <%= button_to 'Back to all the users', root_path, method: :get, class: 'btnPosts'%>
 </div>

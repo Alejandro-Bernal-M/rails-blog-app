@@ -3,7 +3,11 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find_by_id(params[:user_id])
-    @posts = @user.posts
+    if @user.nil?
+      redirect_to '/users/invalid_user'
+    else
+      @posts = @user.posts
+    end
   end
 
   def new

@@ -41,15 +41,17 @@ RSpec.describe 'User management', type: :feature do
 
     it 'redirects to user show page when clicking on a user' do
       visit users_path
-
-      click_link 'You'
-      expect(current_path).to eq(user_path(@user1))
-
-      click_link 'Jane Doe'
-      expect(current_path).to eq(user_path(@user2))
-
-      click_link 'Jack Doe'
-      expect(current_path).to eq(user_path(@user3))
+      
+      click_link(href: "/users/#{@user1.id}")
+      expect(page).to have_current_path("/users/#{@user1.id}")  
+      
+      visit users_path
+      click_link(href: "/users/#{@user2.id}")
+      expect(page).to have_current_path("/users/#{@user2.id}")
+      
+      visit users_path
+      click_link(href: "/users/#{@user3.id}")
+      expect(page).to have_current_path("/users/#{@user3.id}")  
     end
   end
 end

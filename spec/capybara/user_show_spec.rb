@@ -45,15 +45,15 @@ RSpec.describe 'User show', type: :feature do
     expect(page).to have_selector('.btnPosts', text: 'See all posts')
   end
 
-  # scenario 'clicks on users post redirect to post show page' do
-  #   visit user_path(@user1.id)
-  #   click_link(href: "/users/#{@user2.id}/posts/#{@post1.id}")
-  #   expect(page).to have_current_path("/users/#{@user2.id}posts/#{@post1.id}")
-  # end
+  scenario 'clicks on users post redirect to post show page' do
+    visit user_path(@user1.id)
+    click_link(href: "/users/#{@user1.id}/posts/#{@post1.id}")
+    expect(page).to have_current_path("/users/#{@user1.id}/posts/#{@post1.id}")
+  end
 
-  # scenario 'clicks on sell all posts redirect to posts index page' do
-  #   visit user_path(@user1.id)
-  #   click_link(href: "/users/#{@user1.id}/posts")
-  #   expect(page).to have_current_path("/users/#{@user1.id}/posts")
-  # end
+  scenario 'clicks on sell all posts redirect to posts index page' do
+    visit user_path(@user1.id)
+    click_button('See all posts')
+    expect(page).to have_current_path("/users/#{@user1.id}/posts")
+  end
 end

@@ -2,12 +2,9 @@ class PostsController < ApplicationController
   include PostsHelper
 
   def index
-    @user = User.find_by_id(params[:user_id])
-    if @user.nil?
-      redirect_to '/users/invalid_user'
-    else
-      @posts = @user.posts
-    end
+    @user = User.includes(posts: { comments: :author }).find_by(id: params[:user_id])
+    redirect_to '/users/invalid_user' if @user.nil?
+    @posts = @user.posts
   end
 
   def new
@@ -32,7 +29,7 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:user_id])
-    @post = Post.find_by_id(params[:id])
+    @post = @user.posts.includes(:comments, :author).find_by_id(params[:id])
     redirect_to '/users/invalid_user' if @post.nil? || @user.nil?
   end
 end

@@ -17,10 +17,10 @@
       </p>
   </div>
   <div class= "postComments">
-    <% if Comment.all.where(post_id: @post.id).any? %>
-      <% Comment.all.where(post_id: @post.id).each do |comment| %>
+    <% if @post.comments.any? %>
+      <% @post.comments.each do |comment| %>
         <p>
-          <%= User.find(comment.author_id).Name %>
+          <%= comment.author.Name %>
           :
           <%= comment.Text %>
         </p>

@@ -4,8 +4,18 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :Name, autofocus: true, placeholder: 'Name' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Bio %><br />
+    <%= f.text_field :Bio, autofocus: true, placeholder: 'Write a short bio' %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email' %>
   </div>
 
   <div class="field">
@@ -19,6 +29,10 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+      <%= f.hidden_field :Photo, autofocus: true, :value => "https://randomuser.me/api/portraits/men/#{rand(99)}.jpg" %>
   </div>
 
   <div class="actions">

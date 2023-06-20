@@ -98,11 +98,23 @@ rspec
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Author <a name="author"></a>
+## 👥 Authors <a name="author"></a>
 
 👤 **Alejandro**
 - GitHub: [Alejandro](https://github.com/Alejandro-Bernal-M)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/alejandro-bernal-marin)
+
+
+👤 **Ricardo Martínez**
+- GitHub: [@rmrmrmr](https://github.com/rmrmrmr)
+- Twitter: [@ricmtza](https://twitter.com/ricmtza)
+- LinkedIn: [LinkedIn](www.linkedin.com/in/ricardo-mag)
+
+👤 **Emmanuel Balikuddembe**
+
+- GitHub: [@Balikuddembe](https://github.com/Balikuddembe)
+- Twitter: [@BalixEmm](https://twitter.com/BalixEmma)
+- LinkedIn: [emmanuelbalikuddembe](https://www.linkedin.com/in/emmanuelbalikuddembe/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

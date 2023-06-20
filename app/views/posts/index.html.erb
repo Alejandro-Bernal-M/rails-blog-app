@@ -23,10 +23,10 @@
           </div>
         </div>
         <div class= "postComments">
-        <% if Comment.all.where(post_id: post.id).any? %>
+        <% if post.comments.any? %>
           <% post.return_five_most_recent_comments.each do |comment| %>
             <p>
-              <%= User.find(comment.author_id).Name %>
+              <%= comment.author.Name %>
               :
               <%= comment.Text %>
             </p>

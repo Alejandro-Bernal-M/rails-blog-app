@@ -155,7 +155,6 @@
   gap: 15px;
 }
 
-
 .form,
 .new_user {
   display: flex;
@@ -198,8 +197,8 @@
 }
 
 .new_user {
- padding-top: 9rem;
- height: 100vh;
+  padding-top: 9rem;
+  height: 100vh;
 }
 
 .actions > input {

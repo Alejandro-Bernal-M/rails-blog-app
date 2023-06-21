@@ -1,6 +1,7 @@
 <h1 class ="usersTitle"> users details</h1>
 <%= render 'shared/login_as' %>
 <div class= "userProfile">
+<% if @user %>
   <%= render partial: "shared/user_info", locals: { user: @user } %>
   <div class = "bioContainer" >
     <h2> Bio </h2>
@@ -30,4 +31,7 @@
   </div>
   <% end %>
   <%= button_to 'See all posts', user_posts_path(@user.id), method: :get, class: 'btnPosts' %>
+  <% else %>
+    No user info
+  <% end %>
 </div>

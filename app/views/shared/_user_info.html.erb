@@ -1,4 +1,5 @@
   <div class= "container">
+  <% if user%>
     <div class= "photo">
       <%= image_tag user.Photo , class: "img-profile" %>
     </div>
@@ -10,5 +11,8 @@
         Number of posts: <%= user.PostCounter %>
       </p>
     </div>
+    <% else %>
+    No user info
+  <% end %>
   </div>
   

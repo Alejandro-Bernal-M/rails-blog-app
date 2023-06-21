@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -16,5 +21,5 @@ Rails.application.routes.draw do
   post '/users/:user_id/posts/:post_id', to: 'comments#create', as: 'create_comment'
 
   post '/users/:user_id/posts/:post_id/likes', to: 'likes#create', as: 'create_like'
-  get '/users/*path', to: 'users#invalid_user', constraints: { path: %r{[^/]+} }, as: 'invalid_user'
+  # get '/users/*path', to: 'users#invalid_user', constraints: { path: %r{[^/]+} }, as: 'invalid_user'
 end

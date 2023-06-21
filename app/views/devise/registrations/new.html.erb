@@ -1,0 +1,43 @@
+<h2 class= "usersTitle">Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="formDiv">
+    <%= f.text_field :Name, autofocus: true, placeholder: 'Name' %>
+  </div>
+
+  <div class="formDiv">
+    <%= f.text_field :Bio, autofocus: true, placeholder: 'Write a short bio' %>
+  </div>
+
+  <div class="formDiv">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email' %>
+  </div>
+
+  <div class="formDiv">
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password' %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+  </div>
+
+  <div class="formDiv">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm your password' %>
+  </div>
+
+
+  <div class="field">
+      <%= f.hidden_field :PostCounter, autofocus: true, :value => 0 %>
+  </div>
+
+  <div class="field">
+      <%= f.hidden_field :Photo, autofocus: true, :value => "https://randomuser.me/api/portraits/men/#{rand(99)}.jpg" %>
+  </div>
+
+  <div class="actions formDiv">
+    <%= f.submit "Sign up" %>
+  </div>
+<%= render "devise/shared/links" %>
+<% end %>
+

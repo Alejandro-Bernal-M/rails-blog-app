@@ -31,6 +31,9 @@
         </p>
     <% end %>
   </div>
+  <% if can?(:destroy, @post) %>
+    <%= button_to 'Delete', destroy_user_post_path(post_id: @post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btnPosts btnComment'  %>
+  <% end %>
   <%= button_to 'Create a comment', new_comment_path(user_id: @user.id, post_id: @post.id), method: :get, class: 'btnPosts btnComment'  %>
   <%= button_to 'Give like', create_like_path(user_id: @user.id, post_id: @post.id), method: :post, class: 'btnPosts btnComment' %>
   <%= button_to 'Back to all the posts', user_posts_path, method: :get, class: 'btnPosts btnMargin'%>

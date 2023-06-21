@@ -4,6 +4,9 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    can :read, Post
+    can :manage, Post, author_id: user.id # User can delete their own posts
+    can :destroy, Post if user.role == 'admin' # Admin can delete any post
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?

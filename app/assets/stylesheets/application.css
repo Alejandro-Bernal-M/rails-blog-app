@@ -211,3 +211,13 @@
   display: inline-block;
   cursor: pointer;
 }
+
+.commentContainer {
+  display: flex;
+  align-items: center;
+}
+
+.deleteComment {
+  width: 160px !important;
+  height: 25px !important;
+}

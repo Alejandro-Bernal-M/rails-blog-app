@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
@@ -9,7 +10,12 @@ gem 'rails', '~> 7.0.5'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
+# use devise for authentication
 gem 'devise'
+
+# use cancancan for authorization
+gem 'cancancan'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 

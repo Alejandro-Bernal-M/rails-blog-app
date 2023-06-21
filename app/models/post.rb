@@ -18,4 +18,8 @@ class Post < ApplicationRecord
   def return_five_most_recent_comments
     comments.order(created_at: :desc).limit(5)
   end
+
+  def update_comments_counter
+    update(CommentsCounter: comments.count)
+  end
 end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords'
   }
-  
+
   root 'users#index'
   get '/users', to: 'users#index', as: 'users'
 

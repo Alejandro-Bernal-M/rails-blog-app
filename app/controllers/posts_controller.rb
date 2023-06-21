@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   load_and_authorize_resource
   include PostsHelper
@@ -17,7 +19,7 @@ class PostsController < ApplicationController
     @post = @user.posts.new(post_params)
     @post.CommentsCounter = 0
     @post.LikesCounter = 0
-  
+
     if @post.save
       @post.update_posts_counter
       redirect_to user_posts_path(user_id: @user.id)
@@ -25,8 +27,7 @@ class PostsController < ApplicationController
       render :new
     end
   end
-  
-  
+
   def show
     @user = User.find_by_id(params[:user_id])
     @post = @user.posts.includes(:comments, :author).find_by_id(params[:id])
@@ -36,7 +37,7 @@ class PostsController < ApplicationController
   def destroy
     @user = User.find_by_id(params[:user_id])
     @post = Post.find_by_id(params[:id])
-    
+
     if can?(:destroy, @post) # Check if the current user is authorized to delete the post
       @post.likes.destroy_all
       @post.comments.destroy_all
@@ -49,8 +50,8 @@ class PostsController < ApplicationController
   end
 
   private
-  
+
   def post_params
     params.require(:post).permit(:Title, :Text)
-  end  
+  end
 end

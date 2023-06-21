@@ -7,6 +7,8 @@ class Ability
     can :read, Post
     can :manage, Post, author_id: user.id # User can delete their own posts
     can :destroy, Post if user.role == 'admin' # Admin can delete any post
+    can :manage, Comment, author_id: user.id # User can delete their own comments
+    can :destroy, Comment if user.role == 'admin' # Admin can delete any comment
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?

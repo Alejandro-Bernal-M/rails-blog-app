@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Post < ApplicationRecord
   belongs_to :author, class_name: :User
   has_many :comments
@@ -17,5 +19,9 @@ class Post < ApplicationRecord
   # A method which returns the 5 most recent comments for a given post.
   def return_five_most_recent_comments
     comments.order(created_at: :desc).limit(5)
+  end
+
+  def update_comments_counter
+    update(CommentsCounter: comments.count)
   end
 end

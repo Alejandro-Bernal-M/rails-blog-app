@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -9,10 +11,10 @@ gem 'rails', '~> 7.0.5'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-# use devise for authentication 
+# use devise for authentication
 gem 'devise'
 
-#use cancancan for authorization
+# use cancancan for authorization
 gem 'cancancan'
 
 # Use postgresql as the database for Active Record

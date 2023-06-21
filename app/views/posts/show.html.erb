@@ -24,6 +24,9 @@
           :
           <%= comment.Text %>
         </p>
+        <% if can?(:destroy, comment)%>
+          <%= button_to 'Delete comment', destroy_comment_path(user_id: @user.id, post_id: @post.id, id: comment.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btnPosts btnComment'  %>
+        <% end %>
       <% end %>
       <% else %>
         <p>

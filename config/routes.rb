@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   delete '/users/:user_id/posts/:id', to: 'posts#destroy', as: 'destroy_user_post'
   get '/users/:user_id/posts/:post_id/new', to: 'comments#new', as: 'new_comment'
   post '/users/:user_id/posts/:post_id', to: 'comments#create', as: 'create_comment'
+  delete '/users/:user_id/posts/:post_id/:id', to: 'comments#destroy', as: 'destroy_comment'
 
   post '/users/:user_id/posts/:post_id/likes', to: 'likes#create', as: 'create_like'
   # get '/users/*path', to: 'users#invalid_user', constraints: { path: %r{[^/]+} }, as: 'invalid_user'

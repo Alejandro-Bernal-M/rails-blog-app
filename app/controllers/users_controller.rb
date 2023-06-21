@@ -4,10 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
-    if @user.nil?
-      render :invalid_user
+    if params[:id] == 'sign_out'
+      sign_out(current_user)
     else
+      @user = User.find_by_id(params[:id])
+      render :invalid_user if @user.nil?
       @recent_posts = @user.return_three_most_recent_posts
     end
   end

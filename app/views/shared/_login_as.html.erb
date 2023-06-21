@@ -1,3 +1,4 @@
-<p class = "loginAs">
-  You are logged in as: <%= @current_user.Name %>
-</p>
+<div class = "loginAs">
+  <p> You are logged in, </p> 
+  <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+</div>

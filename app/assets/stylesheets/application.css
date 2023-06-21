@@ -149,9 +149,15 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
   margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
-.form {
+
+.form,
+.new_user {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -184,9 +190,25 @@
 }
 
 .formDiv > input {
-  height: 30px;
+  height: 40px;
 }
 
 .btnComment {
   margin: 10px;
+}
+
+.new_user {
+ padding-top: 9rem;
+ height: 100vh;
+}
+
+.actions > input {
+  width: 100%;
+}
+
+.button_to > button {
+  width: 80px;
+  height: 40px;
+  display: inline-block;
+  cursor: pointer;
 }

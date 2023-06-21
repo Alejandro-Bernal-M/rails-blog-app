@@ -6,10 +6,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords'
   }
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  
   root 'users#index'
   get '/users', to: 'users#index', as: 'users'
 
@@ -25,5 +22,4 @@ Rails.application.routes.draw do
   delete '/users/:user_id/posts/:post_id/:id', to: 'comments#destroy', as: 'destroy_comment'
 
   post '/users/:user_id/posts/:post_id/likes', to: 'likes#create', as: 'create_like'
-  # get '/users/*path', to: 'users#invalid_user', constraints: { path: %r{[^/]+} }, as: 'invalid_user'
 end

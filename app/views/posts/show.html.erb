@@ -19,23 +19,25 @@
   <div class= "postComments">
     <% if @post.comments.any? %>
       <% @post.comments.each do |comment| %>
-        <p>
-          <%= comment.author.Name %>
-          :
-          <%= comment.Text %>
-        </p>
-        <% if can?(:destroy, comment)%>
-          <%= button_to 'Delete comment', destroy_comment_path(user_id: @user.id, post_id: @post.id, id: comment.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btnPosts btnComment'  %>
+      <div class= "commentContainer">
+          <p>
+            <%= comment.author.Name %>
+            :
+            <%= comment.Text %>
+          </p>
+          <% if can?(:destroy, comment)%>
+            <%= button_to 'Delete comment', destroy_comment_path(user_id: @user.id, post_id: @post.id, id: comment.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btnPosts btnComment deleteComment'  %>
+          <% end %>
+      </div>
         <% end %>
-      <% end %>
-      <% else %>
-        <p>
-          No comments yet
-        </p>
-    <% end %>
+        <% else %>
+          <p>
+            No comments yet
+          </p>
+        <% end %>
   </div>
   <% if can?(:destroy, @post) %>
-    <%= button_to 'Delete', destroy_user_post_path(post_id: @post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btnPosts btnComment'  %>
+    <%= button_to 'Delete Post', destroy_user_post_path(post_id: @post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btnPosts btnComment'  %>
   <% end %>
   <%= button_to 'Create a comment', new_comment_path(user_id: @user.id, post_id: @post.id), method: :get, class: 'btnPosts btnComment'  %>
   <%= button_to 'Give like', create_like_path(user_id: @user.id, post_id: @post.id), method: :post, class: 'btnPosts btnComment' %>

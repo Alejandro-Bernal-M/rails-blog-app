@@ -6,6 +6,11 @@ class PostsController < ApplicationController
     @user = User.includes(posts: { comments: :author }).find_by(id: params[:user_id])
     redirect_to '/users/invalid_user' if @user.nil?
     @posts = @user.posts
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
   end
 
   def new

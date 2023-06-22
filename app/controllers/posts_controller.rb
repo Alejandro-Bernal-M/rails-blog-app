@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json {render json: @posts}
+      format.json { render json: @posts }
     end
   end
 
@@ -35,7 +35,6 @@ class PostsController < ApplicationController
     @user = User.find_by_id(params[:user_id])
     @post = @user.posts.includes(:comments, :author).find_by_id(params[:id])
     redirect_to '/users/invalid_user' if @post.nil? || @user.nil?
-
   end
 
   def destroy

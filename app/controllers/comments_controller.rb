@@ -4,6 +4,12 @@ class CommentsController < ApplicationController
     @post = Post.find_by_id(params[:post_id])
   end
 
+  def index
+    @post = Post.find_by_id(params[:post_id])
+    @comments = Comment.where(post_id: @post.id).includes(:author)
+    render json: @comments, only: %i[id Text], include: { author: { only: %i[id Name] } }
+  end
+
   def create
     @user = User.find_by_id(params[:user_id])
     @post = Post.find_by_id(params[:post_id])

@@ -19,6 +19,10 @@ gem 'cancancan'
 # Use JsonWebToken (JWT) for token based authentication
 gem 'jwt'
 
+gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
